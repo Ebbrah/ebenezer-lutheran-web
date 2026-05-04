@@ -1,103 +1,107 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getChmsAppUrl } from "@/lib/env";
+import { siteConfig } from "@/lib/site-config";
 
-export default function Home() {
+export default function HomePage() {
+  const chmsAppUrl = getChmsAppUrl();
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <section
+        className="border-b border-[var(--border)] bg-gradient-to-b from-[var(--muted)]/80 to-[var(--background)]"
+        aria-labelledby="hero-heading"
+      >
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
+          <p className="font-heading text-sm font-medium uppercase tracking-wide text-[var(--primary)]">
+            Welcome
+          </p>
+          <h1
+            id="hero-heading"
+            className="font-heading mt-3 text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl"
+          >
+            Faith, hope, and love — together at {siteConfig.shortName}
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg text-[var(--muted-foreground)]">
+            We gather around God&apos;s word and sacraments. Whether you are
+            visiting Dar es Salaam or looking for a church home, you are welcome
+            here.
+          </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <a
+              href={chmsAppUrl}
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--primary)] px-8 py-3 text-center text-base font-semibold text-[var(--primary-foreground)] shadow-md transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
+              rel="noopener noreferrer"
+            >
+              ChMS / Member portal
+            </a>
+            <Link
+              href="/services#times"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-[var(--primary)] px-8 py-3 text-center text-base font-semibold text-[var(--primary)] transition hover:bg-[var(--muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
+            >
+              Visit — service times
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-8 py-3 text-center text-base font-semibold text-[var(--accent-foreground)] transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
+            >
+              Contact us
+            </Link>
+            <Link
+              href="/give"
+              className="inline-flex min-h-12 items-center justify-center text-center text-base font-semibold text-[var(--primary)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
+            >
+              Give
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6" aria-labelledby="intro-heading">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <h2
+              id="intro-heading"
+              className="font-heading text-2xl font-semibold text-[var(--foreground)]"
+            >
+              Who we are
+            </h2>
+            <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
+              We are a Lutheran congregation seeking to proclaim Christ crucified
+              and risen, serve our neighbours, and grow as disciples. Replace
+              this paragraph with your parish story, founding date, and what
+              newcomers can expect on a Sunday.
+            </p>
+            <Link
+              href="/about"
+              className="mt-6 inline-flex min-h-11 items-center font-semibold text-[var(--primary)] underline-offset-4 hover:underline"
+            >
+              Read more about us
+            </Link>
+          </div>
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--muted)]/40 p-6">
+            <h3 className="font-heading text-lg font-semibold text-[var(--foreground)]">
+              This Sunday
+            </h3>
+            <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+              Update this card weekly — time, location, and language.{" "}
+              {siteConfig.languages}
+            </p>
+            <p className="mt-4 font-medium text-[var(--foreground)]">
+              Holy Communion — 10:00 AM
+            </p>
+            <p className="text-sm text-[var(--muted-foreground)]">
+              See full schedule on the Services page.
+            </p>
+            <Link
+              href="/services"
+              className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--primary)] underline-offset-4 hover:underline"
+            >
+              Services &amp; times
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

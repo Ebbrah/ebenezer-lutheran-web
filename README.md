@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ebenezer Lutheran — public website
 
-## Getting Started
+Next.js marketing site for **ebenezerlutheran.or.tz**, deployed separately from the ChMS application.
 
-First, run the development server:
+## Stack
+
+- **Next.js 15** (App Router) + **TypeScript** + **Tailwind CSS v4**
+- **Vercel** — hosting, previews, domains
+- **Supabase** (optional) — contact form storage via Row Level Security
+
+## Local development
 
 ```bash
+npm install
+cp .env.example .env.local
+# Edit .env.local — set CHMS URL and Supabase if testing the contact form
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+See `.env.example`. Minimum for production:
 
-## Learn More
+- `NEXT_PUBLIC_SITE_URL` — canonical site URL
+- `NEXT_PUBLIC_CHMS_APP_URL` — member portal (ChMS)
 
-To learn more about Next.js, take a look at the following resources:
+Supabase keys are optional until you wire the `contact_submissions` table (see **WORKFLOW-PLAN.md**).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Connect this repo to a **new Vercel project** and attach the domain `ebenezerlutheran.or.tz`. Full steps: **`WORKFLOW-PLAN.md`**.
 
-## Deploy on Vercel
+## Project layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/app/` — routes (Home, About, Beliefs, Services, Events, Sermons, Contact, Privacy, Give)
+- `src/components/` — header, footer, contact form
+- `src/lib/` — site config, env helpers, Supabase clients
+- `src/actions/` — server actions (contact form)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+Private — your parish / organization.
