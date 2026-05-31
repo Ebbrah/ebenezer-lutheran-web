@@ -16,22 +16,22 @@ export function ContactForm() {
         role="status"
       >
         <p className="font-medium text-[var(--foreground)]">
-          Thank you — we have received your message.
+          Asante — tumepokea ujumbe wako.
         </p>
         {state.mode === "fallback" ? (
           <p className="mt-2 text-sm text-[var(--muted-foreground)]">
-            Supabase is not configured yet; please also email{" "}
+            Supabase bado haijasajiliwa; tafadhali tuma barua pepe kwa{" "}
             <a
               className="underline"
               href={`mailto:${siteConfig.contactEmail}`}
             >
               {siteConfig.contactEmail}
             </a>{" "}
-            so we can respond.
+            ili tuweze kujibu.
           </p>
         ) : (
           <p className="mt-2 text-sm text-[var(--muted-foreground)]">
-            Someone from the church office will get back to you soon.
+            Mtu kutoka ofisi ya usharika atawasiliana nawe hivi karibuni.
           </p>
         )}
       </div>
@@ -42,7 +42,7 @@ export function ContactForm() {
     <form action={formAction} className="space-y-5" noValidate>
       <div>
         <label htmlFor="name" className="block text-sm font-medium">
-          Name <span className="text-[var(--destructive)]">*</span>
+          Jina <span className="text-[var(--destructive)]">*</span>
         </label>
         <input
           id="name"
@@ -63,7 +63,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium">
-          Email <span className="text-[var(--destructive)]">*</span>
+          Barua pepe <span className="text-[var(--destructive)]">*</span>
         </label>
         <input
           id="email"
@@ -84,7 +84,8 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium">
-          Phone <span className="text-[var(--muted-foreground)]">(optional)</span>
+          Simu{" "}
+          <span className="text-[var(--muted-foreground)]">(si lazima)</span>
         </label>
         <input
           id="phone"
@@ -97,7 +98,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium">
-          Message <span className="text-[var(--destructive)]">*</span>
+          Ujumbe <span className="text-[var(--destructive)]">*</span>
         </label>
         <textarea
           id="message"
@@ -128,7 +129,7 @@ export function ContactForm() {
         disabled={pending}
         className="min-h-11 w-full rounded-full bg-[var(--primary)] px-6 py-3 text-sm font-semibold text-[var(--primary-foreground)] shadow-sm transition hover:opacity-90 disabled:opacity-60 sm:w-auto"
       >
-        {pending ? "Sending…" : "Send message"}
+        {pending ? "Inatumwa…" : "Tuma ujumbe"}
       </button>
     </form>
   );

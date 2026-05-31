@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "dev:host": "next dev -H 0.0.0.0",
+    "dev:turbo": "next dev --turbopack",
+    "build": "next build",
+    "build:turbo": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "optimize:slider": "node scripts/optimize-slider-images.mjs",
+    "vercel:preview": "npx vercel@latest",
+    "vercel:prod": "npx vercel@latest --prod"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.2",
@@ -27,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.15",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

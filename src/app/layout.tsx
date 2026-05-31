@@ -27,15 +27,18 @@ export const metadata: Metadata = {
     template: `%s — ${siteConfig.shortName}`,
   },
   description:
-    "Welcome to Ebenezer Lutheran Church. Service times, beliefs, events, and our member portal (ChMS).",
+    "Karibu Kanisa la Kilutheri la Ebenezer. Saa za ibada, imani, matukio, na Member's Portal (ChMS).",
   openGraph: {
     type: "website",
-    locale: "en_TZ",
+    locale: "sw_TZ",
     url: siteUrl,
     siteName: siteConfig.name,
     title: siteConfig.name,
     description:
-      "A community of faith in Tanzania — worship, word, and service.",
+      "Jumuiya ya imani nchini Tanzania — ibada, neno, na huduma.",
+  },
+  icons: {
+    icon: siteConfig.favicon,
   },
 };
 
@@ -47,12 +50,12 @@ export default function RootLayout({
   const chmsAppUrl = getChmsAppUrl();
 
   return (
-    <html lang="en">
+    <html lang="sw">
       <body
         className={`${dmSans.variable} ${fraunces.variable} font-sans antialiased`}
       >
         <a href="#main-content" className="skip-link">
-          Skip to main content
+          Ruka hadi maudhui makuu
         </a>
         <div className="flex min-h-screen flex-col">
           <SiteHeader chmsAppUrl={chmsAppUrl} churchName={siteConfig.shortName} />

@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
-/* Light, high-contrast palette — comfortable for long reading on phones */
+/* Palette aligned with ChMS (orange primary, warm peach secondary) */
 :root {
-  --background: #faf8f5;
-  --foreground: #1a1a1a;
-  --muted: #f0ebe3;
-  --muted-foreground: #4d4d4d;
-  --primary: #1e3a5f;
+  --radius: 0.5rem;
+  --background: #ffffff;
+  --foreground: #000000;
+  --muted: #f4d7bd;
+  --muted-foreground: #501607;
+  --primary: #e47300;
   --primary-foreground: #ffffff;
-  --accent: #c4a035;
-  --accent-foreground: #1a1a1a;
-  --border: #e2dcd0;
-  --ring: #1e3a5f;
+  --secondary: #f4d7bd;
+  --secondary-foreground: #501607;
+  --accent: #501607;
+  --accent-foreground: #f4d7bd;
+  --border: #f4d7bd;
+  --ring: #e47300;
   --destructive: #b42318;
 }
 
@@ -22,6 +25,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
@@ -32,6 +37,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  background-image:
+    radial-gradient(
+      circle at 0% 0%,
+      color-mix(in srgb, var(--primary) 8%, transparent) 0,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      color-mix(in srgb, var(--accent) 10%, transparent) 0,
+      transparent 24%
+    );
 }
 
 .font-heading {

@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "imageUrl": "/images/slider/slide-1.webp",
+      "fallbackUrl": "https://images.unsplash.com/photo-1438032005738-c779fa592e4a?w=1920&q=80",
+      "alt": "Jengo la kanisa la Ebenezer",
+      "caption": "Nyumba yetu ya ibada — karibu"
+    },
+    {
+      "imageUrl": "/images/slider/slide-2.webp",
+      "fallbackUrl": "https://images.unsplash.com/photo-1519799588879-494dbe840ca4?w=1920&q=80",
+      "alt": "Ibada na maombi pamoja",
+      "caption": "Tumwabudu Mungu kwa roho na kweli"
+    },
+    {
+      "imageUrl": "/images/slider/slide-3.webp",
+      "fallbackUrl": "https://images.unsplash.com/photo-1504052434569-70ad5836ab4e?w=1920&q=80",
+      "alt": "Jumuiya katika ibada",
+      "caption": "Imani, tumaini, na upendo — pamoja"
+    }
+  ]
+}

@@ -6,10 +6,10 @@ import { isSupabaseConfigured } from "@/lib/env";
 import { createClient } from "@/lib/supabase/server";
 
 const schema = z.object({
-  name: z.string().min(1, "Name is required").max(200),
-  email: z.string().email("Valid email required").max(320),
+  name: z.string().min(1, "Jina linahitajika").max(200),
+  email: z.string().email("Barua pepe halali inahitajika").max(320),
   phone: z.string().max(40),
-  message: z.string().min(1, "Message is required").max(5000),
+  message: z.string().min(1, "Ujumbe unahitajika").max(5000),
 });
 
 export type ContactState =
@@ -30,7 +30,7 @@ export async function submitContact(
   if (!parsed.success) {
     return {
       ok: false,
-      error: "Please check the form.",
+      error: "Tafadhali kagua fomu.",
       fieldErrors: parsed.error.flatten().fieldErrors as Record<
         string,
         string[]
@@ -61,7 +61,7 @@ export async function submitContact(
       console.error("[contact]", error.message);
       return {
         ok: false,
-        error: `Could not save your message. Please email ${siteConfig.contactEmail}.`,
+        error: `Hatukuweza kuhifadhi ujumbe. Tafadhali tuma barua pepe kwa ${siteConfig.contactEmail}.`,
       };
     }
 
@@ -70,7 +70,7 @@ export async function submitContact(
     console.error("[contact]", e);
     return {
       ok: false,
-      error: `Something went wrong. Please email ${siteConfig.contactEmail}.`,
+      error: `Kuna tatizo. Tafadhali tuma barua pepe kwa ${siteConfig.contactEmail}.`,
     };
   }
 }

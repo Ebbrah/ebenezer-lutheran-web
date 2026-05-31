@@ -13,13 +13,13 @@ export function getSiteUrl(): string {
 }
 
 /**
- * ChMS / member portal.
- * Defaults to app.{domain} so local previews work before env is set in Vercel.
+ * ChMS / Member's Portal.
+ * Chaguo-msingi: mazingira ya uzalishaji (Vercel) yaliyowekwa na mtaa.
+ * Unaweza kubadilisha kwa `NEXT_PUBLIC_CHMS_APP_URL`.
  */
 export function getChmsAppUrl(): string {
   const raw =
-    process.env.NEXT_PUBLIC_CHMS_APP_URL?.trim() ??
-    `https://app.${siteConfig.domain}`;
+    process.env.NEXT_PUBLIC_CHMS_APP_URL?.trim() ?? "https://chms-prod.vercel.app";
   return stripTrailingSlash(raw);
 }
 

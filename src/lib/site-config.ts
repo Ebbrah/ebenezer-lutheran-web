@@ -1,23 +1,46 @@
 /**
- * Public church facts and fallback contact details.
- * Replace placeholders with your congregation’s real information.
+ * Maelezo ya jumuiya — badilisha mahali unapohitaji.
  */
 export const siteConfig = {
-  name: "Ebenezer Lutheran Church",
-  shortName: "Ebenezer Lutheran",
-  /** Used when env metadata URL is not set */
+  name: "Kanisa la Kilutheri la Ebenezer",
+  shortName: "K.K.K.T Ebenezer",
+  /** Tumika wakati URL ya metadata haijawekwa */
   domain: "ebenezerlutheran.or.tz",
-  /** Shown if the contact form cannot reach Supabase yet */
+  /**
+   * Nembo ya kichwa — faili katika `public/`.
+   * Picha ya sasa ni uwiano wa upana:refu 2:1 (si mraba).
+   */
+  logo: {
+    src: "/images/logo/logo.png",
+    width: 48,
+    height: 24,
+  },
+  /**
+   * Ikoni ya kichupo cha kivinjari — faili katika `public/` (`.ico`, `.png`, au `.svg`).
+   * Badilisha njia hapa (k.m. `/images/logo/favicon.ico` baada ya kuongeza faili).
+   */
+  favicon: "/images/logo/favicon.ico",
+  /** Inaonyeshwa ikiwa fomu ya mawasiliano haiwezi kuhifadhi kwenye Supabase */
   contactEmail: "office@ebenezerlutheran.or.tz",
   phone: "+255 XXX XXX XXX",
-  addressLines: [
-    "Your street or parish office",
-    "City, Tanzania",
+  addressLines: ["Ilazo street", "Dodoma, Tanzania"],
+  /** Sehemu ya kwanza ya kichwa cha footer (herufi ndogo) */
+  footerOrgSubtitle: "K.K.K.T Dayosisi ya Dodoma",
+  /** Sehemu ya pili ya kichwa cha footer (herufi kubwa zaidi) */
+  footerOrgTitle: "Usharika wa Ebenezer",
+  /** Kiungo cha kituo chako cha YouTube */
+  youtubeChannelUrl: "https://www.youtube.com/@kkktebenezerilazo-dodoma6585",
+  /** Kiungo cha akaunti ya Instagram — badilisha kwa URL halisi */
+  instagramUrl: "https://www.instagram.com/",
+  /** Tovuti mashuhuri (footer) */
+  famousWebsites: [
+    { label: "KKKT (ELCT)", href: "http://elct.org/" },
+    { label: "Lutheran World Federation", href: "https://www.lutheranworld.org/" },
+    { label: "VE Mission", href: "https://www.vemission.org/en/" },
   ],
-  /** Replace with your YouTube channel URL */
-  youtubeChannelUrl: "https://www.youtube.com/@your-channel",
-  /** Google Maps link or embed URL for “Visit” */
-  mapUrl: "https://maps.google.com/?q=Ebenezer+Lutheran+Tanzania",
-  /** Primary worship language note for accessibility */
-  languages: "Services are conducted in [English / Kiswahili / both — edit me].",
+  /** Kiungo cha Ramani ya Google kwa “Tembelea” */
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=KKKT%20Ebenezer%20Ilazo%20Dodoma",
+  /** Maelezo ya lugha za ibada (kurasa zingine zinaweza kutumia) */
+  languages:
+    "Ibada zitakuwa Mbili (Ibada zote zitakuwa katika lugha ya kiswahili).",
 } as const;

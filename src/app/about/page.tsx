@@ -1,40 +1,42 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageIntro } from "@/components/page-intro";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Kuhusu sisi",
   description:
-    "Learn about Ebenezer Lutheran Church — our story, leadership, and mission.",
+    "Hadithi, maono, huduma na taarifa za Usharika wa Ebenezer — KKKT Dayosisi ya Dodoma.",
 };
+
+const sections = [
+  { href: "/about/historia", label: "Historia" },
+  { href: "/about/watumishi-waliohudumu", label: "Watumishi Waliohudumu" },
+  { href: "/about/maono-na-dhamira", label: "Maono na Dhamira" },
+  { href: "/about/miiko", label: "Miiko" },
+  { href: "/about/vipaumbele", label: "Vipaumbele" },
+  { href: "/about/huduma", label: "Huduma" },
+] as const;
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
       <PageIntro
-        title="About us"
-        description="Share your congregation’s history, pastoral leadership, and partnerships here."
+        title="Kuhusu sisi"
+        description="Jifunze zaidi kuhusu Usharika wa Ebenezer — historia, watumishi, maono, na huduma zetu."
       />
-      <div className="prose prose-neutral max-w-none text-[var(--muted-foreground)]">
-        <p>
-          This page is ready for your content: when the parish started, how you
-          serve the community, and what it means to belong. Use short paragraphs
-          and meaningful headings so visitors on mobile can scan quickly.
-        </p>
-        <h2 className="font-heading mt-10 text-xl font-semibold text-[var(--foreground)]">
-          Leadership
-        </h2>
-        <p>
-          List your pastor(s), council leadership, and office hours. Update this
-          section when calls change.
-        </p>
-        <h2 className="font-heading mt-10 text-xl font-semibold text-[var(--foreground)]">
-          Mission in daily life
-        </h2>
-        <p>
-          Describe outreach, schools, diaconal work, or partnerships — whatever
-          tells your story faithfully.
-        </p>
-      </div>
+
+      <ul className="grid gap-3 sm:grid-cols-2">
+        {sections.map((section) => (
+          <li key={section.href}>
+            <Link
+              href={section.href}
+              className="flex min-h-11 items-center rounded-lg border border-[var(--border)] bg-[var(--muted)]/20 px-4 py-3 font-medium text-[var(--foreground)] transition hover:bg-[var(--muted)]/50"
+            >
+              {section.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
