@@ -19,7 +19,8 @@ export function getSiteUrl(): string {
  */
 export function getChmsAppUrl(): string {
   const raw =
-    process.env.NEXT_PUBLIC_CHMS_APP_URL?.trim() ?? "https://chms-prod.vercel.app";
+    process.env.NEXT_PUBLIC_CHMS_APP_URL?.trim() ??
+    "https://chms-prod.vercel.app/login?parish=ebenezer";
   return stripTrailingSlash(raw);
 }
 
